@@ -1,0 +1,112 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <%= link_to "#", class: "navbar-brand" do %>
+    <h1>DailyCat</h1>
+  <% end %>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <%= link_to "SIGN IN", "#", class: "nav-link btn btn-outline-secondary" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "SIGN UP", "#", class: "nav-link" %>
+      </li>
+      <li class="nav-item dropdown">
+
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <%= link_to "Profile", "#", class: "dropdown-item" %>
+          <%= link_to "Log out", "#", class: "dropdown-item" %>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+
+
+<div class="container">
+
+   <div id="product">
+      <div id="content">
+          <div class="ajust-img">
+            <div class="img-cote" >
+              <div>
+                <%= image_tag @product.image%>
+              </div id="img-1">
+
+              <div id="img-2">
+                <%= image_tag @product.image%>
+              </div>
+
+            </div>
+              <div class="image-haute">
+                <%= image_tag @product.image%>
+              </div>
+          </div>
+
+          <div class="infos-product">
+              <h2 id="titre"><%= @product.title %></h2>
+            <div class = "display-title">
+              <ol>
+                <p class="price"><%= @product.price%> <%="€" %></p >
+                <p class="time"><%= @product.created_at %></p >
+              </ol>
+            </div>
+            <div id="header"></div>
+              <div class = display-description>
+              <button type="button" class="btn btn-primary">Sélectionner ce produit</button>
+
+              <div class="notification">
+                <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large" />
+                  <div class="notification-content">
+                    <p>Par <strong>Jean Claude Delavigne</strong></p>
+                  </div>
+              </div>
+
+               <p class="description"><%= "Description :"%></p>
+              <%= @product.description %>
+              </div>
+          </div>
+        </div>
+    </div>
+
+  <div>
+    <div class="vendor">
+              <div class="notification">
+                <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large" />
+                  <div class="notification-content">
+                    <p>Par <strong>Jean Claude Delavigne</strong></p>
+                    <p>16 annonces</p>
+                  </div>
+              </div>
+
+              <div class="vendeur-notif">
+                <i class="far fa-heart"></i>
+                  <div class="vendeur-content">
+                    <p>Membre depuis novembre 2015</p>
+                  </div>
+              </div>
+               <div class="vendeur-notif">
+                <i class="far fa-heart"></i>
+                  <div class="vendeur-content">
+                  <p>Répond généralement en une journée</p>
+                  </div>
+              </div>
+              <div id="bouton">
+                <button type="button" class="btn btn-success">Contacter le vendeur</button>
+              </div>
+
+              </div>
+              <div class="map-global">
+                <div class="map">
+                <img src="https://www.google.com/maps/d/thumbnail?mid=1eNcG7ORt3s_7SqIwYAIgEaJBpJ0" alt="">
+                </div>
+              </div>
+    </div>
+
+</div>

@@ -1,1 +1,47 @@
-<h1>products#index</h1>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <%= link_to "#", class: "navbar-brand" do %>
+    <h1>DailyCat</h1>
+  <% end %>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <%= link_to "SIGN IN", "#", class: "nav-link btn btn-outline-secondary" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "SIGN UP", "#", class: "nav-link" %>
+      </li>
+      <li class="nav-item dropdown">
+
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <%= link_to "Profile", "#", class: "dropdown-item" %>
+          <%= link_to "Log out", "#", class: "dropdown-item" %>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<h1 id="products-title"><strong>Voici les résultats pour ce produit 😼</strong></h1>
+
+
+<div class="card-container">
+<% @products.each do |product| %>
+<div class="card-trip">
+  <img src="https://source.unsplash.com/random"/>
+  <div class="card-trip-infos">
+  <div class="card-trip-title">
+    <h2><%= product.title %></h2>
+  </div>
+    <h2 class="card-trip-localisation">Bordeaux</h2>
+    <i class="fas fa-map-marker-alt"></i>
+    <h2 class="card-trip-pricing"><%= product.price %></h2>
+    <i class="fas fa-paw"></i>
+  </div>
+</div>
+<% end %>
+</div>

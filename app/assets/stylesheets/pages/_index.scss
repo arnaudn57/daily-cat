@@ -1,2 +1,21 @@
 // Import page-specific CSS files here.
 @import "home";
+
+#products-title {
+  text-align: center;
+  margin: 20px;
+}
+
+.fa-paw {
+  position: absolute;
+  right: 15px;
+  bottom: -56px;
+  margin-right: 8px;
+}
+
+.fa-map-marker-alt {
+  position: absolute;
+  left: 15px;
+  bottom: -55px;
+  margin-right: 8px;
+}

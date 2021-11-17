@@ -3,4 +3,5 @@ class Product < ApplicationRecord
 
   # has_one :transaction
 
+  has_one_attached :image
 end

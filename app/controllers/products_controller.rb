@@ -21,4 +21,28 @@ class ProductsController < ApplicationController
       lng: @cat.longitude
       }]
   end
+
+  def new
+    if cat_signed_in?
+      @product = Product.new
+    else
+      redirect_to new_cat_registration_path
+    end
+  end
+
+  def create
+    @product = Product.new(product_params)
+    @product.cat = current_cat
+    if @product.save
+      redirect_to product_path(@product)
+    else
+      render :new
+    end
+  end
+
+  private
+
+  def product_params
+    params.require(:product).permit(:title, :description, :price, :category, :cat_id, :image)
+  end
 end

@@ -78,36 +78,40 @@
 
   <div>
     <div class="vendor">
-              <div class="notification">
-                <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large" />
-                  <div class="notification-content">
-                    <p>Par <strong>Jean Claude Delavigne</strong></p>
-                    <p>16 annonces</p>
-                  </div>
-              </div>
+      <div class="notification">
+        <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large" />
+          <div class="notification-content">
+            <p>Par <strong>Jean Claude Delavigne</strong></p>
+            <p>16 annonces</p>
+          </div>
+      </div>
 
-              <div class="vendeur-notif">
-                <i class="far fa-heart"></i>
-                  <div class="vendeur-content">
-                    <p>Membre depuis novembre 2015</p>
-                  </div>
-              </div>
-               <div class="vendeur-notif">
-                <i class="far fa-heart"></i>
-                  <div class="vendeur-content">
-                  <p>Répond généralement en une journée</p>
-                  </div>
-              </div>
-              <div id="bouton">
-                <button type="button" class="btn btn-success">Contacter le vendeur</button>
-              </div>
+      <div class="vendeur-notif">
+        <i class="far fa-heart"></i>
+          <div class="vendeur-content">
+            <p>Membre depuis novembre 2015</p>
+          </div>
+      </div>
+      <div class="vendeur-notif">
+        <i class="far fa-heart"></i>
+          <div class="vendeur-content">
+            <p>Répond généralement en une journée</p>
+          </div>
+      </div>
+      <div id="bouton">
+        <button type="button" class="btn btn-success">Contacter le vendeur</button>
+      </div>
 
-              </div>
-              <div class="map-global">
-                <div class="map">
-                <img src="https://www.google.com/maps/d/thumbnail?mid=1eNcG7ORt3s_7SqIwYAIgEaJBpJ0" alt="">
-                </div>
-              </div>
     </div>
 
+    <div class="div-map">
+      <div>
+        <div id="map"
+          style="width: 600px; height: 500px;"
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

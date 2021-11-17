@@ -17,6 +17,9 @@ ActiveStorage.start()
 // Note(lewagon): ABOVE IS RAILS DEFAULT CONFIGURATION
 // WRITE YOUR OWN JS STARTING FROM HERE 👇
 // ----------------------------------------------------
+document.addEventListener('turbolinks:load', () => {
+  initMapbox();
+})
 
 // External imports
 import "bootstrap";
@@ -30,3 +33,5 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   clicksound();
 });
+
+import { initMapbox } from '../channels/plugins/init_mapbox';

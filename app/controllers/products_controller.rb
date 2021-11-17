@@ -1,9 +1,15 @@
 class ProductsController < ApplicationController
   def index
+
     if params[:product][:category].present?
       @products = Product.where(category: params[:product][:category])
     else
+
+    if params.dig(:product, :category).nil?
+
       @products = Product.all
+    else
+      @products = Product.where(category: params[:product][:category])
     end
   end
 

@@ -1,5 +1,5 @@
 <%# ---------NAVBAR----------- %>
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon mb-5">
   <%= link_to root_path, class: "navbar-brand" do %>
     <h1>DailyCat</h1>
   <% end %>
@@ -7,6 +7,7 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
+
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
@@ -32,30 +33,25 @@
   </div>
 </div>
 
-<%# -------BANNER------ %>
 
-<div class="banner-content">
-  <div class="banner-img-text">
-    <div class="image">
-      <%= image_tag("cat-home-page.jpeg", class: "menu_icon") %>
-    </div>
-    <div class="banner-text">
-      <h2>La bonne affaire à deux pates de chez toi</h2>
-      <h3>Rentabilise tes croquettes</h3>
-      <br>
-      <br>
-      <%= link_to "JE DECOUVRE", "#", class: "btn btn-primary" %>
-    </div>
-  </div>
-
-<%# ----------SEARCH-BAR----------- %>
-    <div class="search-bar">
-      <%= simple_form_for @product, url: products_path, method: :get, html: {class: 'form-inline'} do |f| %>
-        <%= f.input :category, collection: Product.all.map(&:category), label: false, placeholder: 'Categorie', wrapper_html: {class: "mr-3 rounded-pill"}%>
-        <%= f.input :title, label: false, placeholder: "Nom de l'article", wrapper_html: {class: "mr-3 rounded-pill"}%>
-        <%= f.input :title, label: false, placeholder:'Ville', class: "search-bar-form", wrapper_html: {class: "mr-3 rounded-pill"}%>
-        <%= f.button :submit ,'GO 🐾', label:'GO', class:"btn btn-primary rounded-pill"%>
-      <% end %>
+<%# ----------SIGNIN------------- %>
+<div class="container d-flex justify-content-center align-center text-center text-dark bg-light border border-dark rounded pt-3 pb-3" style="max-width: 30rem;">
+  <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <h2>Log in</h2>
+    <div class="form-inputs">
+      <%= f.input :email,
+                  required: false,
+                  autofocus: true,
+                  input_html: { autocomplete: "email" } %>
+      <%= f.input :password,
+                  required: false,
+                  input_html: { autocomplete: "current-password" } %>
+      <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
     </div>
 
+    <div class="form-actions">
+      <%= f.button :submit, "Log in", class:'btn btn-primary'%>
+  <%= render "devise/shared/links" %>
+    </div>
+  <% end %>
 </div>

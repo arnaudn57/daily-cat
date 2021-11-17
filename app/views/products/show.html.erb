@@ -35,16 +35,18 @@
           <div class="ajust-img">
             <div class="img-cote" >
               <div>
-                <%= image_tag @product.image%>
+                <%= cl_image_tag @product.image.key%>
               </div id="img-1">
 
               <div id="img-2">
-                <%= image_tag @product.image%>
+                <%= cl_image_tag @product.image.key%>
               </div>
 
             </div>
               <div class="image-haute">
-                <%= image_tag @product.image%>
+                <%= cl_image_tag @product.image.key%>
+                <%# <% else %>
+                <%# <%= image_tag "https://source.unsplash.com/random", height: 300, width: 400, crop: :fill %>
               </div>
           </div>
 

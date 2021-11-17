@@ -26,10 +26,12 @@ import "bootstrap";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
+import { clicksound } from '../components/_clicksound';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  clicksound();
 });
 
 import { initMapbox } from '../channels/plugins/init_mapbox';

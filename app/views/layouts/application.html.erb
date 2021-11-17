@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link rel="icon" type="image/png" sizes="32x32" href="https://lh3.googleusercontent.com/proxy/n3JYnruDUBokjDlpd5AP7bUqAPKzY5_TyhuP-yBXuCuTyGMXmZuEAOYcrGnfJGNhCJW8zTnMnGA5ym_ZF0qfKcbWetGp1_q9cl7wwifdrvGe_A">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application' %>
@@ -13,6 +13,7 @@
   </head>
 
   <body>
+  <%= render './components/navbar' %>
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
     <%= yield %>

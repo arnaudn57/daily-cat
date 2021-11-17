@@ -1,36 +1,3 @@
-<%# ---------NAVBAR----------- %>
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to root_path, class: "navbar-brand" do %>
-    <h1>DailyCat</h1>
-  <% end %>
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <%= link_to "AJOUTER UNE ANNONCE 🐱 ", new_product_path, class: "nav-link btn btn-outline-secondary mr-3" %>
-      </li>
-      <li class="nav-item active">
-        <%= link_to "SIGN IN", cat_session_path, class: "nav-link btn btn-outline-secondary" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to "SIGN UP", new_cat_registration_path, class: "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to "DISCONECT", destroy_cat_session_path, method: :delete, class: "nav-link btn btn-outline-danger text-danger" %>
-      </li>
-      <li class="nav-item dropdown">
-
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <%= link_to "Profile", cat_session_path, class: "dropdown-item" %>
-          <%= link_to "Log out", "#", class: "dropdown-item" %>
-        </div>
-      </li>
-    </ul>
-  </div>
-</div>
 
 <%# -------BANNER------ %>
 
@@ -54,7 +21,7 @@
         <%= f.input :category, collection: Product.all.map(&:category), label: false, placeholder: 'Categorie', wrapper_html: {class: "mr-3 rounded-pill"}%>
         <%= f.input :title, label: false, placeholder: "Nom de l'article", wrapper_html: {class: "mr-3 rounded-pill"}%>
         <%= f.input :title, label: false, placeholder:'Ville', class: "search-bar-form", wrapper_html: {class: "mr-3 rounded-pill"}%>
-        <%= f.button :submit ,'GO 🐾', label:'GO', class:"btn btn-primary rounded-pill"%>
+        <%= f.button :submit ,'GO 🐾', label:'GO', class:"btn btn-primary rounded-pill sound"%>
       <% end %>
     </div>
 

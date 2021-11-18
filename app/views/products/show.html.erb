@@ -2,48 +2,52 @@
 
    <div id="product">
       <div id="content">
-          <div class="ajust-img">
-            <div class="img-cote" >
-              <div>
-                <%= cl_image_tag @product.image.key%>
-              </div id="img-1">
-
-              <div id="img-2">
-                <%= cl_image_tag @product.image.key%>
-              </div>
-
-            </div>
-              <div class="image-haute">
-                <%= cl_image_tag @product.image.key%>
-                <%# <% else %>
-                <%# <%= image_tag "https://source.unsplash.com/random", height: 300, width: 400, crop: :fill %>
-              </div>
-          </div>
-
-          <div class="infos-product">
-              <h2 id="titre"><%= @product.title %></h2>
-            <div class = "display-title">
-              <ol>
-                <p class="price"><%= @product.price%> <%="€" %></p >
-                <p class="time"><%= @product.created_at %></p >
+        <div class="img-cote" >
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+              <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
               </ol>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <%#= cl_image_tag @product.image%>
+                </div>
+                <div class="carousel-item">
+                  <%#= cl_image_tag @product.image.key %>
+                </div >
+                <div class="carousel-item">
+                  <%#= cl_image_tag @product.image.key%>
+                </div>
+              </div>
             </div>
-            <div id="header"></div>
-              <div class = display-description>
-              <button type="button" class="btn btn-primary">Sélectionner ce produit</button>
-
-              <div class="notification">
-                <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large" />
-                  <div class="notification-content">
-                    <p>Par <strong>Jean Claude Delavigne</strong></p>
-                  </div>
-              </div>
-
-               <p class="description"><%= "Description :"%></p>
-              <%= @product.description %>
-              </div>
           </div>
         </div>
+      </div>
+
+      <div class="infos-product">
+        <h2 id="titre"><%= @product.title %></h2>
+        <div class = "display-title">
+          <ol>
+            <p class="price"><%= @product.price%> <%="€" %></p >
+            <p class="time"><%= @product.created_at %></p >
+          </ol>
+        </div>
+        <div id="header"></div>
+          <div class = display-description>
+          <button type="button" class="btn btn-primary">Sélectionner ce produit</button>
+
+          <div class="notification">
+            <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large" />
+              <div class="notification-content">
+                <p>Par <strong>Jean Claude Delavigne</strong></p>
+              </div>
+          </div>
+
+            <p class="description"><%= "Description :"%></p>
+          <%= @product.description %>
+          </div>
+      </div>
     </div>
 
   <div>

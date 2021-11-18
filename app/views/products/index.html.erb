@@ -5,7 +5,7 @@
 <div class="card-container">
 <% @products.each do |product| %>
 <div class="card-trip">
-  <%= image_tag "https://source.unsplash.com/random" %>
+  <%= image_tag product.image.key %>
   <div class="card-trip-infos">
   <div class="card-trip-title">
     <h2><%= product.title %></h2>

@@ -1,0 +1,26 @@
+.footer {
+  background-color: black;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  height: 225px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  margin-bottom: 0px;
+}
+
+.footer-text{
+  color:white;
+  width: 500px;
+  margin-top: 25px;
+}
+
+.footer-social ul{
+  list-style: none;
+}
+
+.footer-social li{
+  display: inline-block;
+}

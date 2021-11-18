@@ -9,18 +9,24 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <%= link_to "AJOUTER UNE ANNONCE 🐱 ", new_product_path, class: "nav-link btn btn-outline-secondary mr-3" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to "SIGN UP", new_cat_registration_path, class: "nav-link mr-3" %>
-      </li>
-      <li class="nav-item active">
-        <%= link_to "SIGN IN", cat_session_path, class: "nav-link btn btn-outline-secondary mr-3" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to "DISCONECT", destroy_cat_session_path, method: :delete, class: "nav-link btn btn-outline-danger text-danger" %>
-      </li>
+      <% if cat_signed_in? %>
+        <li class="nav-item active">
+          <%= link_to "AJOUTER UNE ANNONCE 🐱 ", new_product_path, class: "nav-link btn btn-outline-secondary mr-3" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "MY PROFILE", products_path, class: "nav-link btn btn-outline-warning text-warning mr-3" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "LOG OUT", destroy_cat_session_path, method: :get, class: "nav-link btn btn-outline-danger text-danger" %>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to "SIGN UP", new_cat_registration_path, class: "nav-link mr-3" %>
+        </li>
+        <li class="nav-item active">
+          <%= link_to "SIGN IN", cat_session_path, class: "nav-link btn btn-outline-secondary mr-3" %>
+        </li>
+      <% end %>
     </ul>
   </div>
 </div>

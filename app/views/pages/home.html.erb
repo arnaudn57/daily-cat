@@ -1,10 +1,9 @@
-
 <%# -------BANNER------ %>
 
 <div class="banner-content">
   <div class="banner-img-text">
     <div class="image">
-      <%= image_tag("cat-home-page.jpeg", class: "menu_icon") %>
+      <%= image_tag("cat-home-page.jpg", class: "menu_icon") %>
     </div>
     <div class="banner-text">
       <h2>La bonne affaire à deux pattes de chez toi 😼</h2>
@@ -21,8 +20,7 @@
         <%= f.input :category, collection: Product.all.map(&:category), label: false, placeholder: 'Categorie', wrapper_html: {class: "mr-3 rounded-pill"}%>
         <%= f.input :title, label: false, placeholder: "Nom de l'article", wrapper_html: {class: "mr-3 rounded-pill"}%>
         <%= f.input :title, label: false, placeholder:'Ville', class: "search-bar-form", wrapper_html: {class: "mr-3 rounded-pill"}%>
-        <%= f.button :submit ,'GO 🐾', label:'GO', class:"btn btn-primary rounded-pill sound"%>
+        <%= f.button :submit ,'GO 🐾', label:'GO', class:"btn btn-primary rounded-pill"%>
       <% end %>
     </div>
-
 </div>

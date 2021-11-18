@@ -1,11 +1,11 @@
 
-<h1 id="products-title"><strong>Voici les résultats pour ce produit 😼</strong></h1>
+<h1 id="products-title"><strong>Voici nos charticles 😼</strong></h1>
 
 
 <div class="card-container">
 <% @products.each do |product| %>
 <div class="card-trip">
-  <%= image_tag product.image.key %>
+  <%= cl_image_tag product.image.key %>
   <div class="card-trip-infos">
   <div class="card-trip-title">
     <h2><%= product.title %></h2>

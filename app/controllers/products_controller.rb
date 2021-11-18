@@ -8,8 +8,10 @@ class ProductsController < ApplicationController
   end
 
   def show
+
     @product = Product.find(params[:id])
     @cat = Cat.find(@product.cat_id)
+    # @cat_username = Product.find(params[:cat_id]).username
     @markers = [{
       lat: @cat.latitude,
       lng: @cat.longitude

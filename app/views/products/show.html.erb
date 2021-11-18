@@ -1,91 +1,183 @@
 <div class="container">
+<% if current_cat %>
+<%# Si c'est le vendeur%>
 
    <div id="product">
-      <div id="content">
-        <div class="img-cote" >
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-              <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-              </ol>
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <%#= cl_image_tag @product.image%>
+    <div id="content">
+      <div class="img-cote" >
+          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <% @product.photos.each_with_index do |_, index| %>
+                <li data-target="#carouselExampleIndicators" data-slide-to="<%= index %>" class=<%= "active" if index.zero? %>></li>
+              <% end %>
+            </ol>
+            <div class="carousel-inner">
+              <% @product.photos.each_with_index do |photo, index| %>
+                <div class="carousel-item <%= "active" if index.zero? %>">
+                  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
                 </div>
-                <div class="carousel-item">
-                  <%#= cl_image_tag @product.image.key %>
-                </div >
-                <div class="carousel-item">
-                  <%#= cl_image_tag @product.image.key%>
-                </div>
-              </div>
+              <% end %>
             </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
           </div>
-        </div>
       </div>
 
-      <div class="infos-product">
-        <h2 id="titre"><%= @product.title %></h2>
-        <div class = "display-title">
-          <ol>
-            <p class="price"><%= @product.price%> <%="€" %></p >
-            <p class="time"><%= @product.created_at %></p >
-          </ol>
-        </div>
-        <div id="header"></div>
-          <div class = display-description>
-          <button type="button" class="btn btn-primary">Sélectionner ce produit</button>
-
+    <div class="infos-product">
+      <h2 id="titre"><%= @product.title %></h2>
+      <div class = "display-title">
+        <ol>
+          <p class="price"><%= @product.price%> <%="€" %></p >
+          <p class="time"><%= @product.created_at %></p >
+        </ol>
+      </div>
+      <div id="header"></div>
+        <div class = display-description>
+          <button type="button" class="btn btn-primary">Voir mon produit</button>
           <div class="notification">
-            <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large" />
+            <img src='https://e7.pngegg.com/pngimages/142/1021/png-clipart-cat-computer-icons-user-profile-avatar-profile-mammal-animals.png' class="avatar-large" />
               <div class="notification-content">
-                <p>Par <strong>Jean Claude Delavigne</strong></p>
+                <p>Par <strong> <%= @cat.username %></strong></p>
               </div>
           </div>
 
-            <p class="description"><%= "Description :"%></p>
+          <p class="description"><%= "Description :"%></p>
           <%= @product.description %>
-          </div>
-      </div>
-    </div>
-
-  <div>
-    <div class="vendor">
-      <div class="notification">
-        <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large" />
-          <div class="notification-content">
-            <p>Par <strong>Jean Claude Delavigne</strong></p>
-            <p>16 annonces</p>
-          </div>
-      </div>
-
-      <div class="vendeur-notif">
-        <i class="far fa-heart"></i>
-          <div class="vendeur-content">
-            <p>Membre depuis novembre 2015</p>
-          </div>
-      </div>
-      <div class="vendeur-notif">
-        <i class="far fa-heart"></i>
-          <div class="vendeur-content">
-            <p>Répond généralement en une journée</p>
-          </div>
-      </div>
-      <div id="bouton">
-        <button type="button" class="btn btn-success">Contacter le vendeur</button>
-      </div>
-
-    </div>
-
-    <div class="div-map">
-      <div>
-        <div id="map"
-          style="width: 600px; height: 500px;"
-          data-markers="<%= @markers.to_json %>"
-          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
         </div>
       </div>
     </div>
   </div>
+
+  <div class="vendor">
+    <div class="notification">
+      <img src='https://e7.pngegg.com/pngimages/142/1021/png-clipart-cat-computer-icons-user-profile-avatar-profile-mammal-animals.png' class="avatar-large" />
+      <div class="notification-content">
+        <p>Par <strong> <%= @cat.username %></strong></p>
+        <p>16 annonces</p>
+      </div>
+    </div>
+    <div class="vendeur-notif">
+      <i class="far fa-heart"></i>
+      <div class="vendeur-content">
+        <p>Membre depuis novembre 2015</p>
+      </div>
+    </div>
+    <div class="vendeur-notif">
+      <i class="far fa-heart"></i>
+      <div class="vendeur-content">
+        <p>Répond généralement en une journée</p>
+      </div>
+    </div>
+    <div id="bouton_vendeur">
+      <button type="button" class="btn btn-success">Voir mon profil</button>
+    </div>
+
+  <div id="map_2">
+    <div id="map_bouton_1" >
+      <button type="button" class="btn btn-primary">Je souhaite modifier mon profil</button>
+    </div>
+
+    <div id="map_bouton_2" >
+      <button type="button" class="btn btn-primary">Je souhaite supprimer mon profil</button>
+    </div>
+  </div>
+</div>
+
+
+<% else %>
+<%# Si c'est l'acheteur'%>
+   <div id="product">
+    <div id="content">
+      <div class="img-cote" >
+          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <% @product.photos.each_with_index do |_, index| %>
+                <li data-target="#carouselExampleIndicators" data-slide-to="<%= index %>" class=<%= "active" if index.zero? %>></li>
+              <% end %>
+            </ol>
+            <div class="carousel-inner">
+              <% @product.photos.each_with_index do |photo, index| %>
+                <div class="carousel-item <%= "active" if index.zero? %>">
+                  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+                </div>
+              <% end %>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+      </div>
+
+    <div class="infos-product">
+      <h2 id="titre"><%= @product.title %></h2>
+      <div class = "display-title">
+        <ol>
+          <p class="price"><%= @product.price%> <%="€" %></p >
+          <p class="time"><%= @product.created_at %></p >
+        </ol>
+      </div>
+      <div id="header"></div>
+        <div class = display-description>
+          <button type="button" class="btn btn-primary">Sélectionner ce produit</button>
+          <div class="notification">
+            <img src='https://e7.pngegg.com/pngimages/142/1021/png-clipart-cat-computer-icons-user-profile-avatar-profile-mammal-animals.png' class="avatar-large" />
+              <div class="notification-content">
+                <p>Par <strong> <%= @cat_username %></strong></p>
+              </div>
+          </div>
+
+          <p class="description"><%= "Description :"%></p>
+          <%= @product.description %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="vendor">
+    <div class="notification">
+      <img src='https://e7.pngegg.com/pngimages/142/1021/png-clipart-cat-computer-icons-user-profile-avatar-profile-mammal-animals.png' class="avatar-large" />
+      <div class="notification-content">
+        <p>Par <strong> <%= @cat.username %></strong></p>
+        <p>16 annonces</p>
+      </div>
+    </div>
+    <div class="vendeur-notif">
+      <i class="far fa-heart"></i>
+      <div class="vendeur-content">
+        <p>Membre depuis novembre 2015</p>
+      </div>
+    </div>
+    <div class="vendeur-notif">
+      <i class="far fa-heart"></i>
+      <div class="vendeur-content">
+        <p>Répond généralement en une journée</p>
+      </div>
+    </div>
+    <div id="bouton">
+      <button type="button" class="btn btn-success">Contacter le vendeur</button>
+    </div>
+  <div id="map"
+    style="width: 600px; height: 500px;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+  </div>
+
+
+
+
+<% end %>
+
 </div>

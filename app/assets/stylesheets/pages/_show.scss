@@ -42,6 +42,8 @@ border-top-right-radius: 5px;
   background-color: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
+
+
 .display-title ol {
   display: flex;
   align-items: center;
@@ -89,6 +91,18 @@ border-top-right-radius: 5px;
   align-content: center;
   margin: 0 auto;
   padding-top: 30px;
+}
+#bouton_vendeur .btn  {
+  width: 500px;
+  align-content: center;
+  margin-top: 20px;
+  margin-left: 50px;
+  height: 50px;
+  align-content: center;
+  color: white;
+  background-color: rgb(160, 39, 126);
+  border: 1px;
+
 }
 
 .vendeur-notif .vendeur-content {
@@ -139,18 +153,55 @@ border-top-right-radius: 5px;
   background-color: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
-.div-map{
+
+#map {
   width: 100%;
-  height: 500px;
-  margin-top: 10px;
+  height: 400px;
+  margin-top: 50px;
   border-radius: 10px;
   border: 1px solid #6b6a6a5d;
   background-color: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
+#map_2 {
+width: 100%;
+  height: 400px;
+  margin-top: 50px;
+}
+
+#map_bouton_1 .btn {
+  width: 600px;
+  height: 100px;
+  margin-top: 20px;
+  border-radius: 20px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(76, 25, 170);
+  font-size: 20px;
+  border: 3px;
+  border-color: red;
+  box-shadow: 0 0 15px rgba(168, 9, 70, 0.2);
+}
+#map_bouton_2 .btn {
+  width: 600px;
+  height: 100px;
+  margin-top: 20px;
+  border-radius: 20px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(223, 64, 64);
+  font-size: 20px;
+  border: 3px;
+  border-color: red;
+  box-shadow: 0 0 15px rgba(170, 11, 11, 0.664);
+}
+
 
 #content {
     margin: 0 auto;
     align-content: center;
+}
+
+.avatar-large{
+  width: 60px;
+  height: 50px;
 }

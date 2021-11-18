@@ -17,9 +17,9 @@
 <%# ----------SEARCH-BAR----------- %>
     <div class="search-bar">
       <%= simple_form_for @product, url: products_path, method: :get, html: {class: 'form-inline'} do |f| %>
-        <%= f.input :category, collection: Product.all.map(&:category), label: false, placeholder: 'Categorie', wrapper_html: {class: "mr-3 rounded-pill"}%>
-        <%= f.input :title, label: false, placeholder: "Nom de l'article", wrapper_html: {class: "mr-3 rounded-pill"}%>
-        <%= f.input :title, label: false, placeholder:'Ville', class: "search-bar-form", wrapper_html: {class: "mr-3 rounded-pill"}%>
+        <%= f.input :category, collection: Product::AUTHORIZED_CATEGORIES, label: false, placeholder: 'Categorie', input_html: { name: 'category', value: params.dig(:category), class: "mr-3 rounded-pill"}%>
+        <%= f.input :title, label: false, placeholder: "Nom de l'article", input_html: { name: 'title', value: params.dig(:title), class: "mr-3 rounded-pill"}%>
+        <%= f.input :address, label: false, placeholder:'Ville', class: "search-bar-form", input_html: { name: 'address', value: params.dig(:address), class: "mr-3 rounded-pill"}%>
         <%= f.button :submit ,'GO 🐾', label:'GO', class:"btn btn-primary rounded-pill"%>
       <% end %>
     </div>

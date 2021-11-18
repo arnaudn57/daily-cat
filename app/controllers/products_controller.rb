@@ -6,6 +6,16 @@ class ProductsController < ApplicationController
     else
       @products = Product.all
     end
+    # if params[:category].present? && params[:title].present?
+    #   category = Product.search_by_category(params[:category])
+    #   @products = category.search_by_title(params[:title])
+    # elsif params[:category].present?
+    #   @products = Product.search_by_category(params[:category])
+    # elsif params[:title].present?
+    #   @products = Product.search_by_title(params[:title])
+    # else
+    #   @products = Product.all
+    # end
   end
 
   def show

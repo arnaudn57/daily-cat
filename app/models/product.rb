@@ -1,4 +1,5 @@
 class Product < ApplicationRecord
+  include PgSearch::Model
   belongs_to :cat
   has_one_attached :image
 

@@ -1,6 +1,8 @@
 class Cat < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  include PgSearch::Model
+  multisearchable against: :address
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :reservations

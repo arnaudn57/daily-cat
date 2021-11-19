@@ -1,0 +1,12 @@
+<h1 class="d-flex justify-content-center mt-3">EDITION DE MON PRODUIT</h1>
+
+<div class="container d-flex justify-content-center align-center text-center text-dark bg-light border border-dark rounded mt-5 rounded" style="max-width: 50rem; height: 55vh">
+  <%= simple_form_for @product do |f| %>
+    <%= f.input :title, required: true, label: "Titre"%>
+    <%= f.input :description %>
+    <%= f.input :price, input_html: { min: '0', step: 'any' }, required: true %>
+    <%= f.input :category, collection: ["Hygiène 🧼", "Miam 🤤", "Jouet 🪀", "Maison 🛋"], required: true %>
+    <%= f.input :image, as: :file , required: false%>
+    <%= f.submit :submit, class: "btn btn-primary", label: "Modifier mon annonce"%>
+  <% end %>
+</div>

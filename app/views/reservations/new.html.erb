@@ -1,0 +1,17 @@
+<%# ----------NEW_RESERVATION------- %>
+
+<h1 class="d-flex justify-content-center mt-3">CONFIRMATION DE LA RESERVATION</h1>
+<div class="container d-flex justify-content-center align-center text-center text-dark bg-light border border-dark mt-5 p-5 rounded" style="max-width: 30rem;">
+  <div class="d-flex flex-column">
+    <h2>Etes vous sur de vouloir réserver cet article ?</h2>
+      <strong><%= @product.title.capitalize  %></strong>
+      <p><%= cl_image_tag @product.image.key, class:"img-reservation text-center"%></p>
+      <p><%= @product.price %>€</p>
+      <p><%= @product.category %></p>
+        <div class="btn-confirm mt-5">
+        <% catemail = "mailto: #{@cat.email}" %>
+          <a href = 'mailto: #{@cat.email}' class ="btn btn-primary">Contacter le vendeur</a>
+          <%# <%= link_to "Chat va être trop bien", products_path, class: "btn btn-primary" %>
+        </div>
+    </div>
+</div>

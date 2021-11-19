@@ -1,28 +1,28 @@
 
-<h1 id="products-title"><strong>Voici les résultats pour ce produit 😼</strong></h1>
+<h1 id="products-title"><strong>Voici nos charticles 😼</strong></h1>
 
 <div class="card-container">
   <% @products.each do |product| %>
-    <div class="card-trip">
-      <% if product.photos.attached?%>
-        <%= cl_image_tag product.photos.first.key %>
-      <% else %>
-        <img src="https://source.unsplash.com/random">
-      <% end %>
+     <div class="card-trip">
+        <% if product.photos.attached?%>
+           <%= cl_image_tag product.photos.first.key %>
+        <% else %>
+          <img src="https://source.unsplash.com/random">
+        <% end %>
+    <div class="card-trip-infos">
+    <div class="card-trip-title">
+        <h2><%= product.title %></h2>
+        <p><%= product.category %></p>
+    </div>
+        <h2 class="card-trip-localisation"><%= product.cat.address %></h2>
+        <i class="fas fa-map-marker-alt"></i>
+        <h2 class="card-trip-pricing"><%= product.price %></h2>
+        <i class="fas fa-paw"></i>
+        <div class="card-trip-button">
 
-        <div class="card-trip-infos">
-          <div class="card-trip-title">
-            <h2><%= product.title %></h2>
-            <p><%= product.category %></p>
-          </div>
-            <h2 class="card-trip-localisation">Bordeaux</h2>
-            <i class="fas fa-map-marker-alt"></i>
-            <h2 class="card-trip-pricing"><%= product.price %></h2>
-            <i class="fas fa-paw"></i>
-          <div class="card-trip-button">
-            <%= link_to "Miaou", product_path(product), class: "btn btn-flat" %>
-          </div>
+      <%= link_to "Miaou", product_path(product), class: "btn btn-flat" %>
       </div>
     </div>
-  <% end %>
+  </div>
+    <% end %>
 </div>

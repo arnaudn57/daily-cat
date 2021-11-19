@@ -1,10 +1,21 @@
 class ProductsController < ApplicationController
   def index
-    if params.dig(:product, :category).nil?
-      @products = Product.all
+    query = params[:category] +' '+ params[:title] +' '+params[:address]
+    if !query.blank?
+      @products = Product.search_global(query)
     else
-      @products = Product.where(category: params[:product][:category])
+      @products = Product.all
     end
+    # if params[:category].present? && params[:title].present?
+    #   category = Product.search_by_category(params[:category])
+    #   @products = category.search_by_title(params[:title])
+    # elsif params[:category].present?
+    #   @products = Product.search_by_category(params[:category])
+    # elsif params[:title].present?
+    #   @products = Product.search_by_title(params[:title])
+    # else
+    #   @products = Product.all
+    # end
   end
 
   def show
@@ -35,6 +46,15 @@ class ProductsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
+    @product = Product.find(params[:id])
+  end
+
+  def update
+    @product = Product.update(product_params)
+    redirect_to product_path(@product)
   end
 
   private

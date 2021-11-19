@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_17_142323) do
+ActiveRecord::Schema.define(version: 2021_11_18_134354) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -72,6 +72,15 @@ ActiveRecord::Schema.define(version: 2021_11_17_142323) do
     t.index ["product_id"], name: "index_messages_on_product_id"
   end
 
+  create_table "pg_search_documents", force: :cascade do |t|
+    t.text "content"
+    t.string "searchable_type"
+    t.bigint "searchable_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["searchable_type", "searchable_id"], name: "index_pg_search_documents_on_searchable"
+  end
+
   create_table "products", force: :cascade do |t|
     t.string "title"
     t.text "description"
@@ -84,14 +93,14 @@ ActiveRecord::Schema.define(version: 2021_11_17_142323) do
     t.index ["cat_id"], name: "index_products_on_cat_id"
   end
 
-  create_table "transactions", force: :cascade do |t|
+  create_table "reservations", force: :cascade do |t|
     t.bigint "cat_id", null: false
     t.bigint "product_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.boolean "validate", default: false
-    t.index ["cat_id"], name: "index_transactions_on_cat_id"
-    t.index ["product_id"], name: "index_transactions_on_product_id"
+    t.boolean "confirmation", default: false
+    t.index ["cat_id"], name: "index_reservations_on_cat_id"
+    t.index ["product_id"], name: "index_reservations_on_product_id"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
@@ -99,6 +108,6 @@ ActiveRecord::Schema.define(version: 2021_11_17_142323) do
   add_foreign_key "messages", "cats"
   add_foreign_key "messages", "products"
   add_foreign_key "products", "cats"
-  add_foreign_key "transactions", "cats"
-  add_foreign_key "transactions", "products"
+  add_foreign_key "reservations", "cats"
+  add_foreign_key "reservations", "products"
 end

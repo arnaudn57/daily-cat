@@ -1,9 +1,9 @@
 class ProductsController < ApplicationController
   def index
-    query = params[:category] +' '+ params[:title] +' '+params[:address]
+    query = [params[:category], params[:title], params[:address]].join(' ')
     if !query.blank?
-      @products = Product.search_global(query)
-    else
+      @products = Product.search_global(query.strip)
+    elsif !query.present?
       @products = Product.all
     end
     # if params[:category].present? && params[:title].present?
@@ -19,7 +19,6 @@ class ProductsController < ApplicationController
   end
 
   def show
-
     @product = Product.find(params[:id])
     @cat = Cat.find(@product.cat_id)
     # @cat_username = Product.find(params[:cat_id]).username
@@ -55,6 +54,12 @@ class ProductsController < ApplicationController
   def update
     @product = Product.update(product_params)
     redirect_to product_path(@product)
+  end
+
+  def destroy
+    @product = Product.find(params[:id])
+    @product.destroy
+    redirect_to products_path
   end
 
   private

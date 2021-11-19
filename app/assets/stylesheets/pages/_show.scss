@@ -28,9 +28,8 @@ text-align: center;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 width: 100%;
 height: 300px;
-padding-left: 3px;
-border-bottom-right-radius: 5px;
 border-top-right-radius: 5px;
+border-top-left-radius: 5px;
 }
 
 #product {
@@ -139,7 +138,7 @@ border-top-right-radius: 5px;
 
 .display-description .btn {
   width: 80%;
-  background-color: rgb(101, 103, 230);
+  background-color: #09C3C3;
   border-radius: 20px;
   margin-bottom: 20px;
   border: 0px;
@@ -147,6 +146,9 @@ border-top-right-radius: 5px;
   height: 50px;
   text-decoration: none;
   margin-left: 40px;
+}
+.display-description .btn:hover {
+  background-color: #00E5E5
 }
 .display-description .btn:hover {
   font-size: 18px;
@@ -247,4 +249,8 @@ width: 100%;
 .avatar-large{
   width: 60px;
   height: 50px;
+}
+
+#black .p {
+  color: black;
 }

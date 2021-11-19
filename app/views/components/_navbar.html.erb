@@ -1,7 +1,9 @@
 <%# ---------NAVBAR----------- %>
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to root_path, class: "navbar-brand" do %>
-    <h1>DailyCat</h1>
+    <%# <h1>DailyCat</h1> %>
+    <%= image_tag("logo.png",alt: "logo") %>
+
   <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -14,7 +16,7 @@
           <%= link_to "AJOUTER UNE ANNONCE 🐱 ", new_product_path, class: "nav-link btn btn-outline-secondary mr-3" %>
         </li>
         <li class="nav-item">
-          <%= link_to "VOIR MES ANNONCES", dashboard_index_path, class: "nav-link btn btn-outline-warning text-warning mr-3" %>
+          <%= link_to "VOIR MES RESERVATIONS", products_path, class: "nav-link btn btn-outline-warning text-warning mr-3" %>
         </li>
         <li class="nav-item">
           <%= link_to "LOG OUT", destroy_cat_session_path, method: 'delete', class: "nav-link btn btn-outline-danger text-danger" %>

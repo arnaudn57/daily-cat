@@ -4,10 +4,14 @@
           <% @reservations.each do |res| %>
             <div class="card-product">
               <%= cl_image_tag res.product.photos.first %>
-                <div class="card-product-infos">
-                  <h2><%= res.product.title %></h2>
-                  <p><%= res.product.description %></p>
-                </div>
+              <div class="card-product-infos">
+                <h2><%= res.product.title %></h2>
+                <p><%= res.product.description %></p>
+                <%= link_to "Delete",
+                reservation_path(res),
+                method: :delete,
+                data: { confirm: "Are you sure?" } %>
+              </div>
             </div>
       <% end %>
 </div>

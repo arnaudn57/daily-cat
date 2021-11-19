@@ -15,7 +15,8 @@
       <p class="mt-3"><strong>Price:</strong><%= @product.price %>€</p>
       <p><strong>Category:</strong> <%= @product.category %></p>
         <div class="btn-confirm mt-3">
-          <a class ="btn btn-primary">Réserver le produit</a>
+          <%# <a class ="btn btn-primary">Réserver le produit</a> %>
+          <%= link_to 'Réserver le product', product_reservations_path(@product), class: "btn btn-primary", method: :post %>
         </div>
     </div>
 </div>

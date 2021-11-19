@@ -136,6 +136,10 @@ border-top-left-radius: 5px;
   padding-right: 30px;
 }
 
+.display-description {
+  text-align: center;
+  align-items: center;
+}
 .display-description .btn {
   width: 80%;
   background-color: #09C3C3;
@@ -146,6 +150,8 @@ border-top-left-radius: 5px;
   height: 50px;
   text-decoration: none;
   margin-left: 40px;
+  padding-top: 13px;
+
 }
 .display-description .btn:hover {
   background-color: #00E5E5

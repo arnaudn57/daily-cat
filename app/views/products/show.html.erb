@@ -42,7 +42,7 @@
           <div class="notification">
             <img src='https://media.istockphoto.com/vectors/cartoon-animal-head-icon-cat-face-avatar-for-profile-of-vector-id542307016?b=1&k=20&m=542307016&s=170667a&w=0&h=60KwD_RZ8wK80DzcqAX8g3Qa1nydcf3hrtPq7Be3FnY=' class="avatar-large" />
               <div class="notification-content">
-                <p>Par <strong> <%= @cat.username %></strong></p>
+                <p>Par <strong> <%= "moi 😼 " %></strong></p>
               </div>
           </div>
 
@@ -57,7 +57,7 @@
     <div class="notification">
       <img src='https://media.istockphoto.com/vectors/cartoon-animal-head-icon-cat-face-avatar-for-profile-of-vector-id542307016?b=1&k=20&m=542307016&s=170667a&w=0&h=60KwD_RZ8wK80DzcqAX8g3Qa1nydcf3hrtPq7Be3FnY=' class="avatar-large" />
       <div class="notification-content">
-        <p>Par <strong> <%= @cat.username %></strong></p>
+        <p>Par <strong> <%= "moi 😼" %></strong></p>
         <p>16 annonces</p>
       </div>
     </div>
@@ -128,8 +128,8 @@
         </ol>
       </div>
       <div id="header"></div>
-        <div class = display-description>
-        <button type="button" class="btn btn-primary blue_btn"> <%= link_to 'Réserver ce produit',  new_product_reservation_path(@product) %></button>
+        <div class = "display-description">
+         <%= link_to 'Réserver ce produit',  new_product_reservation_path(@product), class: 'btn btn-primary'%>
           <div class="notification">
             <img src='https://media.istockphoto.com/vectors/cartoon-animal-head-icon-cat-face-avatar-for-profile-of-vector-id542307016?b=1&k=20&m=542307016&s=170667a&w=0&h=60KwD_RZ8wK80DzcqAX8g3Qa1nydcf3hrtPq7Be3FnY=' class="avatar-large" />
               <div class="notification-content">

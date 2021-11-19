@@ -18,7 +18,7 @@ text-align: center;
    height:3px;
    width:450px;
    background-color:rgb(97, 88, 88);
-   margin-left: 40px ;
+   margin-left: 20px ;
    margin-bottom: 10px;
    border-radius: 5px;
 }
@@ -132,8 +132,12 @@ border-top-right-radius: 5px;
   width: 100%;
   border-radius: 10px;
   margin-bottom: 20px;
+  color: white;
 }
 
+.display-description .blue_btn {
+    color: white;
+}
 .display-description {
   margin-left: 20px;
   margin-right: 20px;
@@ -175,8 +179,8 @@ width: 100%;
   height: 100px;
   margin-top: 20px;
   border-radius: 20px;
-  background-color: rgb(255, 255, 255);
-  color: rgb(76, 25, 170);
+  background-image: radial-gradient(circle at center center, rgb(255, 56, 92) 0%, rgb(230, 30, 77) 27.5%, rgb(227, 28, 95) 40%, rgb(215, 4, 102) 57.5%, rgb(189, 30, 89) 75%, rgb(189, 30, 89) 100%);
+  color: rgb(255, 255, 255);
   font-size: 20px;
   border: 3px;
   border-color: red;
@@ -187,12 +191,23 @@ width: 100%;
   height: 100px;
   margin-top: 20px;
   border-radius: 20px;
-  background-color: rgb(255, 255, 255);
-  color: rgb(223, 64, 64);
+  background-image: radial-gradient(circle at center center, rgb(255, 56, 92) 0%, rgb(230, 30, 77) 27.5%, rgb(227, 28, 95) 40%, rgb(215, 4, 102) 57.5%, rgb(189, 30, 89) 75%, rgb(189, 30, 89) 100%);
+  color: white;
   font-size: 20px;
   border: 3px;
   border-color: red;
   box-shadow: 0 0 15px rgba(170, 11, 11, 0.664);
+}
+
+#map_bouton_2 .btn:hover {
+  font-size: 22px;
+  background-image: rgb(214, 86, 146)
+}
+
+#map_bouton_1 .btn:hover {
+  font-size: 22px;
+  background-image: rgb(214, 86, 146)
+
 }
 
 

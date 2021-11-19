@@ -34,7 +34,7 @@
       <div class = "display-title">
         <ol>
           <p class="price"><%= @product.price%> <%="€" %></p >
-          <p class="time"><%= @product.created_at %></p >
+          <p class="time"><%= @product.created_at.to_date %></p >
         </ol>
       </div>
       <div id="header"></div>
@@ -65,7 +65,7 @@
     <div class="vendeur-notif">
       <i class="far fa-heart"></i>
       <div class="vendeur-content">
-        <p>Membre depuis novembre 2015</p>
+        <p>Membre depuis le <%= @cat.created_at.to_date%></p>
       </div>
     </div>
     <div class="vendeur-notif">
@@ -124,16 +124,16 @@
       <div class = "display-title">
         <ol>
           <p class="price"><%= @product.price%> <%="€" %></p >
-          <p class="time"><%= @product.created_at %></p >
+          <p class="time"><%= @product.created_at.to_date %></p >
         </ol>
       </div>
       <div id="header"></div>
         <div class = display-description>
-          <button type="button" class="btn btn-primary">Sélectionner ce produit</button>
+        <button type="button" class="btn btn-primary blue_btn"> <%= link_to 'Réserver ce produit',  new_product_reservation_path(@product) %></button>
           <div class="notification">
             <img src='https://e7.pngegg.com/pngimages/142/1021/png-clipart-cat-computer-icons-user-profile-avatar-profile-mammal-animals.png' class="avatar-large" />
               <div class="notification-content">
-                <p>Par <strong> <%= @cat_username %></strong></p>
+                <p>Par <strong> <%= @cat.username %></strong></p>
               </div>
           </div>
 
@@ -166,7 +166,8 @@
       </div>
     </div>
     <div id="bouton">
-      <button type="button" class="btn btn-success">Contacter le vendeur</button>
+
+      <a href = 'mailto: #{@cat.email}' class ="btn btn-primary">Contacter le vendeur</a>
     </div>
   <div id="map"
     style="width: 600px; height: 500px;"

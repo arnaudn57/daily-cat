@@ -34,13 +34,13 @@
       <div class = "display-title">
         <ol>
           <p class="price"><%= @product.price%> <%="€" %></p >
-          <p class="time"><%= @product.created_at.to_date %></p >
+          <p class="time"><%= @product.created_at.strftime("%A") %> <%= @product.created_at.day %> <%= @product.created_at.strftime("%B") %></p >
         </ol>
       </div>
       <div id="header"></div>
         <div class = display-description>
           <div class="notification">
-            <img src='https://e7.pngegg.com/pngimages/142/1021/png-clipart-cat-computer-icons-user-profile-avatar-profile-mammal-animals.png' class="avatar-large" />
+            <img src='https://media.istockphoto.com/vectors/cartoon-animal-head-icon-cat-face-avatar-for-profile-of-vector-id542307016?b=1&k=20&m=542307016&s=170667a&w=0&h=60KwD_RZ8wK80DzcqAX8g3Qa1nydcf3hrtPq7Be3FnY=' class="avatar-large" />
               <div class="notification-content">
                 <p>Par <strong> <%= @cat.username %></strong></p>
               </div>
@@ -55,7 +55,7 @@
 
   <div class="vendor">
     <div class="notification">
-      <img src='https://e7.pngegg.com/pngimages/142/1021/png-clipart-cat-computer-icons-user-profile-avatar-profile-mammal-animals.png' class="avatar-large" />
+      <img src='https://media.istockphoto.com/vectors/cartoon-animal-head-icon-cat-face-avatar-for-profile-of-vector-id542307016?b=1&k=20&m=542307016&s=170667a&w=0&h=60KwD_RZ8wK80DzcqAX8g3Qa1nydcf3hrtPq7Be3FnY=' class="avatar-large" />
       <div class="notification-content">
         <p>Par <strong> <%= @cat.username %></strong></p>
         <p>16 annonces</p>
@@ -64,7 +64,8 @@
     <div class="vendeur-notif">
       <i class="far fa-heart"></i>
       <div class="vendeur-content">
-        <p>Membre depuis le <%= @cat.created_at.to_date%></p>
+
+      <p > Membre depuis le <%= @product.created_at.strftime("%A") %> <%= @product.created_at.day %> <%= @product.created_at.strftime("%B") %></p >
       </div>
     </div>
     <div class="vendeur-notif">
@@ -123,14 +124,14 @@
       <div class = "display-title">
         <ol>
           <p class="price"><%= @product.price%> <%="€" %></p >
-          <p class="time"><%= @product.created_at.to_date %></p >
+          <p class="time"><%= @product.created_at.strftime("%A") %> <%= @product.created_at.day %> <%= @product.created_at.strftime("%B") %></p >
         </ol>
       </div>
       <div id="header"></div>
         <div class = display-description>
         <button type="button" class="btn btn-primary blue_btn"> <%= link_to 'Réserver ce produit',  new_product_reservation_path(@product) %></button>
           <div class="notification">
-            <img src='https://e7.pngegg.com/pngimages/142/1021/png-clipart-cat-computer-icons-user-profile-avatar-profile-mammal-animals.png' class="avatar-large" />
+            <img src='https://media.istockphoto.com/vectors/cartoon-animal-head-icon-cat-face-avatar-for-profile-of-vector-id542307016?b=1&k=20&m=542307016&s=170667a&w=0&h=60KwD_RZ8wK80DzcqAX8g3Qa1nydcf3hrtPq7Be3FnY=' class="avatar-large" />
               <div class="notification-content">
                 <p>Par <strong> <%= @cat.username %></strong></p>
               </div>
@@ -146,7 +147,7 @@
 
   <div class="vendor">
     <div class="notification">
-      <img src='https://e7.pngegg.com/pngimages/142/1021/png-clipart-cat-computer-icons-user-profile-avatar-profile-mammal-animals.png' class="avatar-large" />
+      <img src='https://media.istockphoto.com/vectors/cartoon-animal-head-icon-cat-face-avatar-for-profile-of-vector-id542307016?b=1&k=20&m=542307016&s=170667a&w=0&h=60KwD_RZ8wK80DzcqAX8g3Qa1nydcf3hrtPq7Be3FnY=' class="avatar-large" />
       <div class="notification-content">
         <p>Par <strong> <%= @cat.username %></strong></p>
         <p>16 annonces</p>
@@ -155,7 +156,7 @@
     <div class="vendeur-notif">
       <i class="far fa-heart"></i>
       <div class="vendeur-content">
-        <p>Membre depuis novembre 2015</p>
+      <p > Membre depuis le <%= @product.created_at.strftime("%A") %> <%= @product.created_at.day %> <%= @product.created_at.strftime("%B") %></p >
       </div>
     </div>
     <div class="vendeur-notif">

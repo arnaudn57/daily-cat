@@ -10,7 +10,7 @@
       <span id="banner-typed-text"></span>
       <br>
       <br>
-      <%= link_to "JE DECOUVRE", products_path, class: "btn btn-primary" %>
+      <%= link_to "JE DECOUVRE", products_path, class: "btn btn-primary btn_decouvre" %>
     </div>
   </div>
 
@@ -20,7 +20,7 @@
         <%= f.input :category, collection: Product::AUTHORIZED_CATEGORIES, label: false, placeholder: 'Categorie', input_html: { name: 'category', value: params.dig(:category), class: "mr-3 rounded-pill"}%>
         <%= f.input :title, label: false, placeholder: "Nom de l'article", input_html: { name: 'title', value: params.dig(:title), class: "mr-3 rounded-pill"}%>
         <%= f.input :address, label: false, placeholder:'Ville', class: "search-bar-form", input_html: { name: 'address', value: params.dig(:address), class: "mr-3 rounded-pill"}%>
-        <%= f.button :submit ,'GO 🐾', label:'GO', class:"btn btn-primary rounded-pill"%>
+        <%= f.button :submit ,'GO 🐾', label:'GO', class:"btn btn-primary rounded-pill btn_search"%>
       <% end %>
     </div>
 </div>

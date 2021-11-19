@@ -1,5 +1,5 @@
 <div class="container">
-<% if current_cat %>
+<% if current_cat && current_cat == @product.cat %>
 <%# Si c'est le vendeur%>
 
    <div id="product">
@@ -39,7 +39,6 @@
       </div>
       <div id="header"></div>
         <div class = display-description>
-          <button type="button" class="btn btn-primary">Voir mon produit</button>
           <div class="notification">
             <img src='https://e7.pngegg.com/pngimages/142/1021/png-clipart-cat-computer-icons-user-profile-avatar-profile-mammal-animals.png' class="avatar-large" />
               <div class="notification-content">
@@ -75,16 +74,16 @@
       </div>
     </div>
     <div id="bouton_vendeur">
-      <button type="button" class="btn btn-success">Voir mon profil</button>
+
     </div>
 
   <div id="map_2">
     <div id="map_bouton_1" >
-      <button type="button" class="btn btn-primary">Je souhaite modifier mon profil</button>
+      <button type="button" class="btn btn-primary"><%= link_to 'Je souhaite modifier mon annonce',   edit_product_path(@product) %></button>
     </div>
 
     <div id="map_bouton_2" >
-      <button type="button" class="btn btn-primary">Je souhaite supprimer mon profil</button>
+    <%= link_to "Je souhaite supprimer mon annonce", product_path(@product), class: "btn btn-primary", method: :delete, data: { confirm: "Are you sure?" } %>
     </div>
   </div>
 </div>
@@ -166,7 +165,6 @@
       </div>
     </div>
     <div id="bouton">
-
       <a href = 'mailto: #{@cat.email}' class ="btn btn-primary">Contacter le vendeur</a>
     </div>
   <div id="map"

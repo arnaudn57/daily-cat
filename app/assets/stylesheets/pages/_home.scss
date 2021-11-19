@@ -34,6 +34,16 @@
   margin-left:50px;
 }
 
+.btn_decouvre {
+  background-color: #09c3c3;
+  border-color: #09c3c3;
+}
+
+.btn_decouvre:hover {
+  background-color: #00e5e5;
+  border-color: #00e5e5;
+}
+
 // -------SEARCH-BAR-----
 .search-bar {
   display: flex;
@@ -41,4 +51,14 @@
   width: 100%;
   text-align: center;
   margin-top: 80px;
+}
+
+.search-bar .btn_search {
+  background-color: #00e5e5;
+  border-color: #00e5e5;
+}
+
+.search-bar .btn_search:hover {
+  background-color: #00e5e5;
+  border-color: #00e5e5;
 }

@@ -1,0 +1,13 @@
+<h1 class="d-flex justify-content-center mt-3"><%= "Chalut #{current_cat.username} 😻" %></h1>
+<h2 class="d-flex justify-content-center mt-3"><%= "Tu as #{@reservations.count} réservations en attente !" %></h2>
+<div class="align-center text-center text-dark mt-2 p-5 container_card" style="max-width: 60rem;">
+          <% @reservations.each do |res| %>
+            <div class="card-product">
+              <%= cl_image_tag res.product.photos.first %>
+                <div class="card-product-infos">
+                  <h2><%= res.product.title %></h2>
+                  <p><%= res.product.description %></p>
+                </div>
+            </div>
+      <% end %>
+</div>

@@ -11,4 +11,4 @@ const clicksound = () => {
   }
 }
 
-export {clicksound}
+export { clicksound }

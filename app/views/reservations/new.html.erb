@@ -4,17 +4,17 @@
 <div class="container d-flex justify-content-center align-center text-center text-dark bg-light border border-dark mt-5 p-5 rounded" style="max-width: 30rem;">
   <div class="d-flex flex-column">
     <h2>Etes vous sur de vouloir réserver cet article ?</h2>
-    <div >
       <strong><%= @product.title.capitalize %></strong>
+    <div >
       <% if @product.photos.attached? %>
            <%= cl_image_tag @product.photos.first.key, class:"img-reservation text-center"%>
         <% else %>
           <img src="https://source.unsplash.com/random", class="img-reservation text-center",>
         <% end %>
         </div>
-      <p><%= @product.price %>€</p>
-      <p><%= @product.category %></p>
-        <div class="btn-confirm mt-5">
+      <p class="mt-3"><strong>Price:</strong><%= @product.price %>€</p>
+      <p><strong>Category:</strong> <%= @product.category %></p>
+        <div class="btn-confirm mt-3">
           <a class ="btn btn-primary">Réserver le produit</a>
         </div>
     </div>

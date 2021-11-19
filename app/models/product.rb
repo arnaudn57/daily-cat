@@ -1,8 +1,7 @@
 class Product < ApplicationRecord
   include PgSearch::Model
   belongs_to :cat
-  has_one_attached :image
-
+  has_many_attached :photos
   AUTHORIZED_CATEGORIES = ["Hygiène 🧼", "Miam 🤤", "Jouet 🪀", "Maison 🛋"]
   validates :category, inclusion: { in: AUTHORIZED_CATEGORIES }
 

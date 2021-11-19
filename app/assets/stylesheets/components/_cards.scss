@@ -1,8 +1,9 @@
 .card-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 20px;
+  grid-gap: 10px;
   margin: 150px;
+  ;
 }
 
 .card-trip {
@@ -10,8 +11,8 @@
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 7px;
-  height: 350px;
-  width: 250px;
+  height: 400px;
+  width: 300px;
 }
 
 .card-trip > img {
@@ -41,10 +42,12 @@
 
 .card-trip-button {
   position: absolute;
-  right: 63px;
-  bottom: -120px;
+  right: 80px;
+  bottom: -140px;
   margin-right: 8px;
+  align-content: center;
 }
+
 
 .card-trip-title h2 {
   font-size: 25px;

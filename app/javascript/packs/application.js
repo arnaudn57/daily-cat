@@ -33,7 +33,7 @@ import { loadDynamicBannerText } from '../components/_typescript';
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-  initMapbox();
+  // initMapbox();
   // clicksound();
-  loadDynamicBannerText();
+  // loadDynamicBannerText();
 });

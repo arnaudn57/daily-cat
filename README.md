@@ -1,1 +1,1 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+Projet type AirBnb (Maketplace) qui a été réalisé en 1 semaine durant la formation le Wagon.
